@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('/images/books_cover.jpg') no-repeat center fixed;
+  background-size: cover;
+}
+
+body,
+.startPage,
+.wrapper,
+.container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.startPage {
+  width: 100%;
+  max-height: 1000px;
+}
+
+.startPage.hidden {
+  display: none;
+}
+
+.buttonForAll {
+  margin: auto;
+  position: relative;
+  width: 150px;
+  height: 80px;
+  border: none;
+}
+
+.mainContent {
+  display: none;
+}
+
+.mainContent.shown {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: auto;
+  margin: auto;
+}
+
+nav,
+div.wrapper {
+  display: flex;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+  flex-direction: row;
+  z-index: 1;
+  background: rgba(155, 153, 153, 0.655);
+}
+
+.mainHeader {
+  text-align: left;
+  font-size: 30px;
+  margin: 20px auto;
+  color: #fff;
+  width: 40%;
+}
+
+.searchWord {
+  width: 100%;
+}
+
+ul.navList {
+  list-style: none;
+}
+
+label {
+  color: #fff;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoWrapper,
+.navList {
+  width: 25%;
+  justify-content: left;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.logoWrapper {
+  display: flex;
+}
+
+.picLogo {
+  width: 120px;
+}
+
+.wrapper {
+  margin-top: 150px;
+  width: 90%;
+  height: auto;
+}
+
+.container {
+  flex-wrap: wrap;
+  overflow: auto;
+  overflow-x: hidden;
+  max-height: 500px;
+  max-width: 1350px;
+}
+
+.bookWrapper {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 400px;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.bookWrapper:hover {
+  background: rgba(250, 246, 246, 0.377);
+  outline: none;
+}
+
+.bookCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: auto;
+}
+
+.bookImg {
+  width: 183px;
+  height: 267px;
+  margin-bottom: 15px;
+  align-self: center;
+}
+
+.bookTitle,
+.bookAuthor,
+h3 {
+  text-align: center;
+  float: bottom;
+}
+
+@media screen and (min-width: 561px) {
+  .bookWrapper {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .logoWrapper,
+  .navigation {
+    margin-bottom: 20px;
+  }
+
+  .bookWrapper {
+    width: 200px;
+    margin: 10px;
+  }
+}
