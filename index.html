@@ -4,56 +4,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Web Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="startPage">
-      <button type="button" class="buttonForAll">Press to get the books</button>
-    </div>
-    <div class="mainContent">
-      <nav class="navigation">
-        <div class="logoWrapper">
-          <img src="/images/logo.png" class="picLogo" />
-          <h1 class="mainHeader">Grab Your Book</h1>
-        </div>
-        <ul class="navList">
-          <li>
-            <input
-              type="search"
-              onfocus="this.value=''"
-              required
-              placeholder="Type title or author"
-              class="searchWord"
-            />
-          </li>
-          <li>
-            <label for="categories">Choose a category:</label>
-            <select name="categories" id="categories" class="categories">
-              <option value="" selected disabled hidden>Category</option>
-              <option value="drama">Drama</option>
-              <option value="fiction">Fiction</option>
-              <option value="classics">Classics</option>
-              <option value="adventure">Adventure</option>
-            </select>
-          </li>
-          <li>
-            <label for="language">Select language:</label>
-            <select name="language" id="language" class="language">
-              <option value="" selected disabled hidden>Language</option>
-              <option value="en">English</option>
-              <option value="fr">French</option>
-              <option value="it">Italian</option>
-              <option value="de">Deutch</option>
-              <option value="pt">Portugese</option>
-              <option value="es">Espanol</option>
-            </select>
-          </li>
-        </ul>
-      </nav>
-      <div class="wrapper">
-        <div class="container"></div>
-      </div>
-    </div>
-    <script type="module" src="./index.js"></script>
+    <div id="app-root"></div>
+    <script src="./index.js"></script>
   </body>
 </html>
