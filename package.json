@@ -65,5 +65,8 @@
     "**/*.{js,css,md,html}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1"
   }
 }
