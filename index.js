@@ -13,6 +13,8 @@ window.dataStore = {
   filteredBooks: [],
   books: [],
   random: '',
+  filterValue: '',
+  searchValue: '',
 };
 
 const baseURL = `https://www.googleapis.com/books/v1/volumes?q=subject:drama&orderBy=newest&maxResults=40&${process.env.THE_KEY}`;
@@ -71,10 +73,10 @@ function BookChoosing() {
 }
 
 function CategorySelection() {
-  return `<li>
+  return `<li style="width:100%"  >
            <label for="categories">Choose a category:</label>
             <select name="categories" id="categories" class="categories" onchange="(doFilter(this.value));" >
-              <option value='' selected disabled hidden >Category </option>
+              <option value='' >Category </option>
               ${getValues('categories')}
               </select>
           </li>`;
@@ -91,7 +93,7 @@ function LanguageSelection() {
 }
 
 function Randomiser() {
-  return `<button class="${styles.btn}" type='button' onclick="getRandomBooks(randomWord())">Get advise</button>`;
+  return `<p>Wondering what to read? <button class="${styles.btn}" type='button' onclick="getRandomBooks(randomWord())">Get advise</button></p>`;
 }
 
 function AllBooks() {
@@ -127,6 +129,7 @@ function ShowBooks() {
 
 const doFilter = function (filterValue) {
   window.dataStore.isNotFiltered = false;
+  window.dataStore.filterValue = filterValue;
   window.dataStore.filteredBooks = window.dataStore.theBooksInfo.filter(book => {
     return (
       (book.categories !== undefined && book.categories.join() === filterValue.toLocaleString()) ||
@@ -135,10 +138,16 @@ const doFilter = function (filterValue) {
   });
   window.dataStore.filteredBooks;
   window.renderApp();
+  if (filterValue === window.dataStore.filterValue) {
+    document
+      .querySelector(`option[value='${window.dataStore.filterValue}']`)
+      .setAttribute('selected', true);
+  }
 };
 
 const DoSearch = function (searchValue) {
   window.dataStore.isNotFiltered = true;
+  window.dataStore.searchValue = searchValue;
   window.dataStore.filteredBooks = window.dataStore.theBooksInfo.filter(book => {
     return (
       book.title.toLocaleString().toLowerCase().includes(searchValue) ||
@@ -147,6 +156,7 @@ const DoSearch = function (searchValue) {
   });
   window.dataStore.isNotFiltered = false;
   window.renderApp();
+  document.querySelector('.searchWord').value = window.dataStore.searchValue;
 };
 
 const randomWord = function () {
