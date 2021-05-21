@@ -1,0 +1,7 @@
+export default function BookChoosing() {
+  return `<li>
+            <input type="search" placeholder="Type title or author"
+              class="searchWord"/>
+              <button class="${styles.btn}" type='button' onclick="DoSearch(document.querySelector('.searchWord').value)">Find</button>
+          </li>`;
+}
