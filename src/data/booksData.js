@@ -1,3 +1,8 @@
+/** @jsx createElement */
+/** @jsxFrag createFragment */
+
+import { createElement, createFragment } from '../framework/element';
+
 export default function getValues(valueName) {
   let valueArray = [];
   window.dataStore.theBooksInfo.forEach(el => {
@@ -12,7 +17,7 @@ export default function getValues(valueName) {
     }
   });
   return valueArray.map(function (el) {
-    return `<option value='${el}'>${el}</option>`;
+    return <option value={el}>{el}</option>;
   });
 }
 

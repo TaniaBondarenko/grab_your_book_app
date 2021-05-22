@@ -1,3 +1,6 @@
+/** @jsx createElement */
+/** @jsxFrag createFragment */
+
 const DoSearch = function (searchValue) {
   window.dataStore.isNotFiltered = true;
   window.dataStore.searchValue = searchValue;

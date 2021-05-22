@@ -1,10 +1,8 @@
 export default function getTheBooks(URL) {
-  window.dataStore.isDataLoading = true;
   window.renderApp();
   fetch(URL)
     .then(response => response.json())
     .then(result => {
-      window.isDataLoading = false;
       return (window.dataStore.theBooksInfo = result.items.map(el => el.volumeInfo));
     })
     .then(() => renderApp())

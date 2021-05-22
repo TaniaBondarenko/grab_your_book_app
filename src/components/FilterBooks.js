@@ -1,3 +1,6 @@
+/** @jsx createElement */
+/** @jsxFrag createFragment */
+
 const doFilter = function (filterValue) {
   window.dataStore.isNotFiltered = false;
   window.dataStore.filterValue = filterValue;
