@@ -8,9 +8,9 @@ export default function ShowBooks() {
   } else {
     window.dataStore.books = window.dataStore.filteredBooks;
   }
-  let content = '';
+  let content = [];
   window.dataStore.books.forEach(el => {
-    content = (
+    content.push(
       <>
         <div class={styles.bookCard}>
           <div class={styles.mainInfo}>
@@ -34,7 +34,7 @@ export default function ShowBooks() {
             {el['description'] === undefined ? 'You should read to find out' : el['description']}
           </div>
         </div>
-      </>
+      </>,
     );
   });
   return content ? content : 'No books found';
