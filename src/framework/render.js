@@ -1,7 +1,7 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
 
-import { createElement, createFragment } from './element';
+import { createElement } from './element';
 let Component, Target;
 
 function renderApp(componentFunction = null, target = null) {

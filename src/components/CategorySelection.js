@@ -15,7 +15,9 @@ export default function CategorySelection() {
         class="categories"
         onchange={e => doFilter(e.target.value)}
       >
-        <option value="">Category </option>
+        <option value="" selected disabled hidden>
+          Category
+        </option>
         {getValues('categories')}
       </select>
     </li>
