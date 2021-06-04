@@ -1,20 +1,22 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
+import renderApp from '../framework/render';
+import dataStore from '../data/dataStore';
 
 const doFilter = function (filterValue) {
-  window.dataStore.isNotFiltered = false;
-  window.dataStore.filterValue = filterValue;
-  window.dataStore.filteredBooks = window.dataStore.theBooksInfo.filter(book => {
+  dataStore.isNotFiltered = false;
+  dataStore.filterValue = filterValue;
+  dataStore.filteredBooks = dataStore.theBooksInfo.filter(book => {
     return (
       (book.categories !== undefined && book.categories.join() === filterValue.toLocaleString()) ||
       (book.language !== undefined && book.language === filterValue.toLocaleString())
     );
   });
-  window.dataStore.filteredBooks;
-  window.renderApp();
-  if (filterValue === window.dataStore.filterValue) {
+  dataStore.filteredBooks;
+  renderApp();
+  if (filterValue === dataStore.filterValue) {
     document
-      .querySelector(`option[value='${window.dataStore.filterValue}']`)
+      .querySelector(`option[value='${dataStore.filterValue}']`)
       .setAttribute('selected', true);
   }
 };

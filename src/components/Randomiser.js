@@ -2,6 +2,7 @@
 /** @jsxFrag createFragment */
 
 import { createElement, createFragment } from '../framework/element';
+import { getRandomBooks } from '../data/grabYourBookAPI';
 import { randomWord } from '../data/booksData';
 
 export default function Randomiser() {

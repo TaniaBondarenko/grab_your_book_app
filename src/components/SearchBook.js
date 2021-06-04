@@ -1,10 +1,12 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
+import renderApp from '../framework/render';
+import dataStore from '../data/dataStore';
 
 const DoSearch = function (searchValue) {
-  window.dataStore.isNotFiltered = true;
-  window.dataStore.searchValue = searchValue;
-  window.dataStore.filteredBooks = window.dataStore.theBooksInfo
+  dataStore.isNotFiltered = true;
+  dataStore.searchValue = searchValue;
+  dataStore.filteredBooks = dataStore.theBooksInfo
     .filter(book => {
       return book.title && book.authors;
     })
@@ -14,9 +16,9 @@ const DoSearch = function (searchValue) {
         book.authors.join(' ').split(' ').join('').toLowerCase().includes(searchValue)
       );
     });
-  window.dataStore.isNotFiltered = false;
-  window.renderApp();
-  document.querySelector('.searchWord').value = window.dataStore.searchValue;
+  dataStore.isNotFiltered = false;
+  renderApp();
+  document.querySelector('.searchWord').value = dataStore.searchValue;
 };
 
 export default DoSearch;

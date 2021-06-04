@@ -2,10 +2,11 @@
 /** @jsxFrag createFragment */
 
 import { createElement, createFragment } from '../framework/element';
+import dataStore from '../data/dataStore';
 
 export default function getValues(valueName) {
   let valueArray = [];
-  window.dataStore.theBooksInfo.forEach(el => {
+  dataStore.theBooksInfo.forEach(el => {
     if (Array.isArray(el[`${valueName}`])) {
       if (!valueArray.includes(el[`${valueName}`].join())) {
         return valueArray.push(el[`${valueName}`].join());
@@ -41,5 +42,5 @@ export const randomWord = function () {
     'king',
     'ring',
   ];
-  return (window.dataStore.random = words[Math.floor(Math.random() * words.length)]);
+  return (dataStore.random = words[Math.floor(Math.random() * words.length)]);
 };

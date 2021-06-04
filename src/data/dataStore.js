@@ -1,4 +1,4 @@
-window.dataStore = {
+let dataStore = {
   isNotFiltered: true,
   isDataLoading: false,
   theBooksInfo: [],

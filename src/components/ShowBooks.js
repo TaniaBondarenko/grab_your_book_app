@@ -1,15 +1,16 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
 import { createElement, createFragment } from '../framework/element';
+import dataStore from '../data/dataStore';
 
 export default function ShowBooks() {
-  if (window.dataStore.isNotFiltered) {
-    window.dataStore.books = window.dataStore.theBooksInfo;
+  if (dataStore.isNotFiltered) {
+    dataStore.books = dataStore.theBooksInfo;
   } else {
-    window.dataStore.books = window.dataStore.filteredBooks;
+    dataStore.books = dataStore.filteredBooks;
   }
   let content = [];
-  window.dataStore.books.forEach(el => {
+  dataStore.books.forEach(el => {
     content.push(
       <div class={styles.bookCard}>
         <div class={styles.mainInfo}>
