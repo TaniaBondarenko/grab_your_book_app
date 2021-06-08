@@ -1,8 +1,8 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
 
-import { createElement, createFragment } from '../framework/element';
-import getValues from '../data/booksData';
+import { createElement } from '../framework/element';
+import getValues from './createOptions';
 import doFilter from './FilterBooks';
 
 export default function CategorySelection() {

@@ -2,7 +2,7 @@
 /** @jsxFrag createFragment */
 
 import { createElement, createFragment } from '../framework/element';
-import getValues from '../data/booksData';
+import getValues from './createOptions';
 import doFilter from './FilterBooks';
 import ShowBooks from './ShowBooks';
 
