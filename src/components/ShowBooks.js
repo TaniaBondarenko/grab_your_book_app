@@ -2,6 +2,7 @@
 /** @jsxFrag createFragment */
 import { createElement, createFragment } from '../framework/element';
 import dataStore from '../data/dataStore';
+import { getRated } from './ShowBooksWithRating';
 
 export default function ShowBooks() {
   if (dataStore.isNotFiltered) {
@@ -26,6 +27,7 @@ export default function ShowBooks() {
             <h3>{el['title']}</h3>
           </p>
           <p class="bookAuthor">{el['authors']}</p>
+          <p> {el['averageRating'] ? getRated(el['averageRating']) : ''}</p>
         </div>
 
         <div class={styles.aboutBook}>
