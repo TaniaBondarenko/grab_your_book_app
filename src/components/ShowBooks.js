@@ -5,12 +5,13 @@ import dataStore from '../data/dataStore';
 import { getRated } from './ShowBooksWithRating';
 
 export default function ShowBooks() {
+  dataStore.isDataLoading = false;
+  let content = [];
   if (dataStore.isNotFiltered) {
     dataStore.books = dataStore.theBooksInfo;
   } else {
     dataStore.books = dataStore.filteredBooks;
   }
-  let content = [];
   dataStore.books.forEach(el => {
     content.push(
       <div class={styles.bookCard}>
@@ -38,5 +39,5 @@ export default function ShowBooks() {
       </div>,
     );
   });
-  return content ? content : 'No books found';
+  return content;
 }

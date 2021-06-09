@@ -1,6 +1,7 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
 
+import dataStore from '../data/dataStore';
 import { createElement } from './element';
 let Component, Target;
 

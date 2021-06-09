@@ -1,3 +1,7 @@
+/** @jsx createElement */
+/** @jsxFrag createFragment */
+
+import { createElement, createFragment } from '../framework/element';
 import dataStore from '../data/dataStore';
 import renderApp from '../framework/render';
 
@@ -14,8 +18,12 @@ export default function ShowBooksWithRating() {
 
 export function getRated(n) {
   let star = '';
-  for (let i = 0; i < n; i++) {
-    star += '*';
+  for (let i = 0; i < Math.floor(n); i++) {
+    star += '⭐';
   }
-  return star;
+  return (
+    <>
+      <span>{star}</span>
+    </>
+  );
 }

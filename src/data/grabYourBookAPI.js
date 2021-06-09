@@ -2,13 +2,14 @@ import renderApp from '../framework/render';
 import dataStore from '../data/dataStore';
 
 export default function getTheBooks(URL) {
+  dataStore.isDataLoading = true;
   renderApp();
   fetch(URL)
     .then(response => response.json())
     .then(result => {
       return (dataStore.theBooksInfo = result.items.map(el => el.volumeInfo));
     })
-    .then(() => renderApp())
+    .finally(() => renderApp())
     .catch(error => {
       throw new Error('Data loading failed.');
     });
