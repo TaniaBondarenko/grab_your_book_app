@@ -14,7 +14,7 @@ export default function LanguageSelection() {
         name="language"
         id="language"
         class="language"
-        onchange={e => ShowBooks(doFilter(e.target.value))}
+        onchange={e => doFilter(e.target.value)}
       >
         <option value="" selected disabled hidden>
           Language
