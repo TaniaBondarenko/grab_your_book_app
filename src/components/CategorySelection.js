@@ -5,20 +5,20 @@ import { createElement } from '../framework/element';
 import getValues from './createOptions';
 import doFilter from './FilterBooks';
 
-export default function CategorySelection() {
+export default function CategorySelection(props) {
   return (
     <li style="width:100%">
-      <label For="categories">Choose a category:</label>
+      <label For={props.name}>Choose a category:</label>
       <select
-        name="categories"
-        id="categories"
-        class="categories"
+        name={props.name}
+        id={props.name}
+        class={props.name}
         onchange={e => doFilter(e.target.value)}
       >
         <option value="" selected disabled hidden>
           Category
         </option>
-        {getValues('categories')}
+        {getValues(`${props.name}`)}
       </select>
     </li>
   );

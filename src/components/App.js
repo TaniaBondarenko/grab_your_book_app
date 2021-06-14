@@ -9,6 +9,7 @@ import Randomiser from './Randomiser';
 import ShowBooks from './ShowBooks';
 import AllBooks from './AllBooks';
 import Checkbox from './Checkbox/Checkbox';
+import { useEffect, useState } from '../framework/hooks';
 
 export default function App() {
   return (
@@ -22,8 +23,8 @@ export default function App() {
             <div class={styles.ulWrapper}>
               <ul class={styles.navList}>
                 <BookChoosing />
-                <CategorySelection />
-                <LanguageSelection />
+                <CategorySelection name="categories" />
+                <LanguageSelection name="language" />
                 <Randomiser />
                 <AllBooks />
                 <Checkbox label="Show books rated" />

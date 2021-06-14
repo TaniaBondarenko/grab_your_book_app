@@ -4,22 +4,21 @@
 import { createElement, createFragment } from '../framework/element';
 import getValues from './createOptions';
 import doFilter from './FilterBooks';
-import ShowBooks from './ShowBooks';
 
-export default function LanguageSelection() {
+export default function LanguageSelection(props) {
   return (
     <li>
-      <label For="language">Select language:</label>
+      <label For={props.name}>Select language:</label>
       <select
-        name="language"
-        id="language"
-        class="language"
+        name={props.name}
+        id={props.name}
+        class={props.name}
         onchange={e => doFilter(e.target.value)}
       >
         <option value="" selected disabled hidden>
           Language
         </option>
-        {getValues('language')}
+        {getValues(`${props.name}`)}
       </select>
     </li>
   );

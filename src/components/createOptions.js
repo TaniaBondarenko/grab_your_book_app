@@ -1,7 +1,7 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
 
-import { createElement, createFragment } from '../framework/element';
+import { createElement } from '../framework/element';
 import dataStore from '../data/dataStore';
 
 export default function getValues(valueName) {
