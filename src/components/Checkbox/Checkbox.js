@@ -8,7 +8,7 @@ import { useState, useEffect } from '../../framework/hooks';
 export default function Checkbox({ label = '', onChange = null }) {
   const [checked, setChecked] = useState(false);
   function handler() {
-    setChecked(!checked).tnen(ShowBooksWithRating());
+    setChecked(!checked).then(ShowBooksWithRating());
   }
 
   return (

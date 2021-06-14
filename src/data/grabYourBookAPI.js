@@ -9,7 +9,10 @@ export default function getTheBooks(URL) {
     .then(result => {
       return (dataStore.theBooksInfo = result.items.map(el => el.volumeInfo));
     })
-    .finally(() => renderApp())
+    .finally(() => {
+      dataStore.isDataLoading = false;
+      renderApp();
+    })
     .catch(error => {
       throw new Error('Data loading failed.');
     });

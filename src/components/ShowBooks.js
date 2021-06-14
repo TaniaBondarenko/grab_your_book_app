@@ -5,7 +5,6 @@ import dataStore from '../data/dataStore';
 import { getRated } from './ShowBooksWithRating';
 
 export default function ShowBooks() {
-  dataStore.isDataLoading = false;
   let content = [];
   if (dataStore.isNotFiltered) {
     dataStore.books = dataStore.theBooksInfo;
@@ -39,5 +38,11 @@ export default function ShowBooks() {
       </div>,
     );
   });
+
+  if (dataStore.isDataLoading === true) {
+    content = 'Loading...';
+  } else {
+    content;
+  }
   return content;
 }
