@@ -11,6 +11,7 @@ export default function getTheBooks(URL) {
     })
     .finally(() => {
       dataStore.isDataLoading = false;
+      dataStore.isNotFiltered = true;
       renderApp();
     })
     .catch(error => {
@@ -24,11 +25,4 @@ export const baseURL = `https://www.googleapis.com/books/v1/volumes?q=subject:dr
 export const getRandomBooks = function (word) {
   const URL = `https://www.googleapis.com/books/v1/volumes?q=${word}&subject:drama&orderBy=newest&maxResults=4&${process.env.THE_KEY}`;
   getTheBooks(URL);
-  dataStore.isNotFiltered = true;
-};
-
-export const showAllBooks = function () {
-  URL = `https://www.googleapis.com/books/v1/volumes?q=subject:drama&orderBy=newest&maxResults=40&${process.env.THE_KEY}`;
-  getTheBooks(URL);
-  dataStore.isNotFiltered = true;
 };

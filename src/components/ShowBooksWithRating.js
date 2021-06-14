@@ -6,7 +6,6 @@ import dataStore from '../data/dataStore';
 import renderApp from '../framework/render';
 
 export default function ShowBooksWithRating() {
-  dataStore.isNotFiltered = true;
   dataStore.filteredBooks = dataStore.theBooksInfo
     .filter(el => {
       return el.averageRating;

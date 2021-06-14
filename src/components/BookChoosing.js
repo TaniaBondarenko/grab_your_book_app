@@ -1,7 +1,7 @@
 /** @jsx createElement */
 /** @jsxFrag createFragment */
 import { createElement } from '../framework/element';
-import DoSearch from '../components/SearchBook';
+import SearchBook from '../components/SearchBook';
 
 export default function BookChoosing() {
   return (
@@ -11,7 +11,7 @@ export default function BookChoosing() {
         class={styles.btn}
         type="button"
         onclick={e => {
-          DoSearch(document.querySelector('.searchWord').value);
+          SearchBook(document.querySelector('.searchWord').value);
         }}
       >
         Find

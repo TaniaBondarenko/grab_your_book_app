@@ -7,7 +7,7 @@ import { getRated } from './ShowBooksWithRating';
 export default function ShowBooks() {
   let content = [];
   let books = [];
-  if (dataStore.isNotFiltered) {
+  if (dataStore.isNotFiltered === true) {
     books = dataStore.theBooksInfo;
   } else {
     books = dataStore.filteredBooks;

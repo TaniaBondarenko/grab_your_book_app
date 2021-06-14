@@ -16,7 +16,7 @@ export default function Checkbox({ label = '', onChange = null }) {
       <input
         className={styles.check__input}
         type="checkbox"
-        onChange={() => handler}
+        onChange={ShowBooksWithRating}
         checked={checked}
       />
       <span className={styles.check__box}></span>

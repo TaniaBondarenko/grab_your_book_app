@@ -3,7 +3,7 @@
 
 import { createElement } from '../framework/element';
 import getValues from './createOptions';
-import doFilter from './FilterBooks';
+import filterBooks from './FilterBooks';
 
 export default function CategorySelection(props) {
   return (
@@ -13,7 +13,7 @@ export default function CategorySelection(props) {
         name={props.name}
         id={props.name}
         class={props.name}
-        onchange={e => doFilter(e.target.value)}
+        onchange={e => filterBooks(e.target.value)}
       >
         <option value="" selected disabled hidden>
           Category
