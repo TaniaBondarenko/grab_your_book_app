@@ -6,12 +6,13 @@ import { getRated } from './ShowBooksWithRating';
 
 export default function ShowBooks() {
   let content = [];
+  let books = [];
   if (dataStore.isNotFiltered) {
-    dataStore.books = dataStore.theBooksInfo;
+    books = dataStore.theBooksInfo;
   } else {
-    dataStore.books = dataStore.filteredBooks;
+    books = dataStore.filteredBooks;
   }
-  dataStore.books.forEach(el => {
+  books.forEach(el => {
     content.push(
       <div class={styles.bookCard}>
         <div class={styles.mainInfo}>

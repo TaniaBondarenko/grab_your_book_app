@@ -3,10 +3,6 @@ let dataStore = {
   isDataLoading: false,
   theBooksInfo: [],
   filteredBooks: [],
-  books: [],
-  random: '',
-  filterValue: '',
-  searchValue: '',
 };
 
 export default dataStore;

@@ -1,5 +1,3 @@
-import dataStore from '../data/dataStore';
-
 export const randomWord = function () {
   const words = [
     'flowers',
@@ -20,5 +18,5 @@ export const randomWord = function () {
     'king',
     'ring',
   ];
-  return (dataStore.random = words[Math.floor(Math.random() * words.length)]);
+  return words[Math.floor(Math.random() * words.length)];
 };

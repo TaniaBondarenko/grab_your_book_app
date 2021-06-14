@@ -5,7 +5,6 @@ import dataStore from '../data/dataStore';
 
 const DoSearch = function (searchValue) {
   dataStore.isNotFiltered = true;
-  dataStore.searchValue = searchValue;
   dataStore.filteredBooks = dataStore.theBooksInfo
     .filter(book => {
       return book.title && book.authors;
@@ -18,7 +17,6 @@ const DoSearch = function (searchValue) {
     });
   dataStore.isNotFiltered = false;
   renderApp();
-  document.querySelector('.searchWord').value = dataStore.searchValue;
 };
 
 export default DoSearch;
