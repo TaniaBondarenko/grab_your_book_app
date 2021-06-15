@@ -6,9 +6,10 @@ import styles from './Checkbox.css';
 import { useState, useEffect } from '../../framework/hooks';
 
 export default function Checkbox({ label = '', onChange = null }) {
+  //ShowBooksWithRating()
   const [checked, setChecked] = useState(false);
   function handler() {
-    setChecked(!checked).then(ShowBooksWithRating());
+    setChecked(!checked);
   }
 
   return (
@@ -16,7 +17,7 @@ export default function Checkbox({ label = '', onChange = null }) {
       <input
         className={styles.check__input}
         type="checkbox"
-        onChange={ShowBooksWithRating}
+        onChange={() => handler()}
         checked={checked}
       />
       <span className={styles.check__box}></span>
