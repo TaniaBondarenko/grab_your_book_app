@@ -1,15 +1,16 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-import { createElement, createFragment } from '../../framework/element';
+import React from 'react';
 import ShowBooksWithRating from '../ShowBooksWithRating';
 import styles from './Checkbox.css';
-import { useState, useEffect } from '../../framework/hooks';
+import { useState, useEffect } from 'react';
 
 export default function Checkbox({ label = '', onChange = null }) {
-  //ShowBooksWithRating()
   const [checked, setChecked] = useState(false);
   function handler() {
     setChecked(!checked);
+  }
+
+  if (checked === true) {
+    ShowBooksWithRating();
   }
 
   return (

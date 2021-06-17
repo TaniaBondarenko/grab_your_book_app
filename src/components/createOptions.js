@@ -1,7 +1,4 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-
-import { createElement } from '../framework/element';
+import React from 'react';
 import dataStore from '../data/dataStore';
 
 export default function getValues(valueName) {
@@ -18,6 +15,6 @@ export default function getValues(valueName) {
     }
   });
   return valueArray.map(function (el) {
-    return <option value={el}>{el}</option>;
+    return <option defaultValue={el}>{el}</option>;
   });
 }

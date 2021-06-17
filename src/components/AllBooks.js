@@ -1,12 +1,10 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
+import React from 'react';
 import getTheBooks, { baseURL } from '../data/grabYourBookAPI';
-import { createElement, createFragment } from '../framework/element';
 
 export default function AllBooks() {
   return (
     <li>
-      <button class={styles.btn} type="button" onclick={e => getTheBooks(baseURL)}>
+      <button className={styles.btn} type="button" onClick={e => getTheBooks(baseURL)}>
         Show all
       </button>
     </li>

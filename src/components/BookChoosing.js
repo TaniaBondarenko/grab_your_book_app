@@ -1,17 +1,15 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-import { createElement } from '../framework/element';
+import React from 'react';
 import SearchBook from '../components/SearchBook';
 
-export default function BookChoosing() {
+export default function BookChoosing(props) {
   return (
     <li>
-      <input type="search" placeholder="Type title or author" class="searchWord" />
+      <input type="search" placeholder="Type title or author" className="searchWord" />
       <button
-        class={styles.btn}
+        className={styles.btn}
         type="button"
-        onclick={e => {
-          SearchBook(document.querySelector('.searchWord').value);
+        onClick={e => {
+          SearchBook(document.querySelector('.searchWord').value, props);
         }}
       >
         Find

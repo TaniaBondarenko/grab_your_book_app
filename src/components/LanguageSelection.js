@@ -1,21 +1,19 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-
-import { createElement, createFragment } from '../framework/element';
+import React from 'react';
 import getValues from './createOptions';
 import filterBooks from './FilterBooks';
 
 export default function LanguageSelection(props) {
   return (
     <li>
-      <label For={props.name}>Select language:</label>
+      <label htmlFor={props.name}>Select language:</label>
       <select
+        defaultValue={''}
         name={props.name}
         id={props.name}
-        class={props.name}
-        onchange={e => filterBooks(e.target.value)}
+        className={props.name}
+        onChange={e => filterBooks(e.target.value, props)}
       >
-        <option value="" selected disabled hidden>
+        <option value="" disabled>
           Language
         </option>
         {getValues(`${props.name}`)}

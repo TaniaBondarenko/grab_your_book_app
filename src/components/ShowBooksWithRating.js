@@ -1,9 +1,5 @@
-/** @jsx createElement */
-/** @jsxFrag createFragment */
-
-import { createElement, createFragment } from '../framework/element';
+import React from 'react';
 import dataStore from '../data/dataStore';
-import renderApp from '../framework/render';
 
 export default function ShowBooksWithRating() {
   dataStore.filteredBooks = dataStore.theBooksInfo
@@ -11,8 +7,6 @@ export default function ShowBooksWithRating() {
       return el.averageRating;
     })
     .sort((a, b) => b.averageRating - a.averageRating);
-  dataStore.isNotFiltered = false;
-  renderApp();
 }
 
 export function getRated(n) {
